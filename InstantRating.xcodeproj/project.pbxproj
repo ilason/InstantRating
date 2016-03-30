@@ -12,6 +12,7 @@
 		E585C2D31CAC664F004A8BA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E585C2D11CAC664F004A8BA8 /* Main.storyboard */; };
 		E585C2D51CAC664F004A8BA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E585C2D41CAC664F004A8BA8 /* Assets.xcassets */; };
 		E585C2D81CAC664F004A8BA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E585C2D61CAC664F004A8BA8 /* LaunchScreen.storyboard */; };
+		E585C2E01CAC678C004A8BA8 /* LoginSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E585C2DF1CAC678C004A8BA8 /* LoginSignupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		E585C2D41CAC664F004A8BA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E585C2D71CAC664F004A8BA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E585C2D91CAC664F004A8BA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E585C2DF1CAC678C004A8BA8 /* LoginSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSignupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				E585C2CD1CAC664F004A8BA8 /* AppDelegate.swift */,
+				E585C2DF1CAC678C004A8BA8 /* LoginSignupViewController.swift */,
 				E585C2CF1CAC664F004A8BA8 /* ViewController.swift */,
 				E585C2D11CAC664F004A8BA8 /* Main.storyboard */,
 				E585C2D41CAC664F004A8BA8 /* Assets.xcassets */,
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E585C2D01CAC664F004A8BA8 /* ViewController.swift in Sources */,
+				E585C2E01CAC678C004A8BA8 /* LoginSignupViewController.swift in Sources */,
 				E585C2CE1CAC664F004A8BA8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
