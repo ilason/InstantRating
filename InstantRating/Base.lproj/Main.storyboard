@@ -125,15 +125,6 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0hL-RJ-Gch">
                                 <rect key="frame" x="0.0" y="20" width="414" height="44"/>
-                                <items>
-                                    <navigationItem title="Title" id="ADS-nu-loC">
-                                        <barButtonItem key="rightBarButtonItem" title="Create Group" id="sIY-mE-Dil">
-                                            <connections>
-                                                <action selector="createGroupButtonTapped:" destination="UmF-vJ-Al6" id="Eg8-Dk-OI8"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uQP-48-Ofg">
                                 <rect key="frame" x="0.0" y="64" width="414" height="623"/>
@@ -168,7 +159,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ls3-RR-Bnp"/>
+                    <navigationItem key="navigationItem" id="oZZ-UG-Tbt">
+                        <barButtonItem key="rightBarButtonItem" title="Create Group" id="mRF-J4-U1P">
+                            <connections>
+                                <action selector="createGroupButtonTapped:" destination="UmF-vJ-Al6" id="QEU-xt-0Wa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ws-7o-eRU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

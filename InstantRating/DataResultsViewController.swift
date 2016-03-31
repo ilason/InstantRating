@@ -16,8 +16,8 @@ class DataResultsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         barChartView.noDataTextDescription = "Once your group responds to your question, you will have your results."
-        months = ["Jan", "Feb", "Mar", "Apr","May"," Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
-        let unitsSold = [20.0, 4.0, 6.0,3.0,12.0,16.0,4.0,18.0,2.0,4.0,5.0,4.0]
+        months = ["1 Star", "2 Stars", "3 Stars", "4 Stars","5 Stars"]
+        let unitsSold = [5.0, 4.0, 6.0,3.0,12.0]
         setChart(months, values: unitsSold)
         
     }
@@ -33,7 +33,13 @@ class DataResultsViewController: UIViewController {
         
         let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Units Sold")
         let chartData = BarChartData(xVals: months, dataSet: chartDataSet)
-        barChartView.data = chartData 
+        barChartView.data = chartData
+        barChartView.descriptionText = ""
+        chartDataSet.colors = ChartColorTemplates.joyful()
+        barChartView.xAxis.labelPosition = .Bottom
+        barChartView.backgroundColor = UIColor(red: 189/255, green: 195/255, blue: 199/255, alpha: 1)
+        barChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0, easingOption: .EaseOutQuad)
+       // chartDataSet.colors = [UIColor(red: 230/255, green: 126/255, blue: 34/255, alpha: 1)]
         
     }
 
