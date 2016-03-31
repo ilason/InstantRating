@@ -111,7 +111,7 @@
             </objects>
             <point key="canvasLocation" x="845" y="364"/>
         </scene>
-        <!--Host-->
+        <!--Host View Controller-->
         <scene sceneID="i8q-B8-k8z">
             <objects>
                 <viewController id="UmF-vJ-Al6" customClass="HostViewController" customModule="InstantRating" customModuleProvider="target" sceneMemberID="viewController">
@@ -155,6 +155,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="8Iy-iw-C0W" kind="show" id="2D0-nS-DeL"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -165,11 +168,45 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Host" id="mK3-lg-cSy"/>
+                    <navigationItem key="navigationItem" id="ls3-RR-Bnp"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ws-7o-eRU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2298" y="699"/>
+            <point key="canvasLocation" x="2924" y="699"/>
+        </scene>
+        <!--Data Results View Controller-->
+        <scene sceneID="cTT-Vq-9jp">
+            <objects>
+                <viewController id="8Iy-iw-C0W" customClass="DataResultsViewController" customModule="InstantRating" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TRf-43-gsr"/>
+                        <viewControllerLayoutGuide type="bottom" id="xsk-n3-ulH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LXg-PF-5YP">
+                        <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xde-GY-vw8" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="623"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Xde-GY-vw8" firstAttribute="top" secondItem="TRf-43-gsr" secondAttribute="bottom" id="3cH-Qu-sV4"/>
+                            <constraint firstItem="Xde-GY-vw8" firstAttribute="leading" secondItem="LXg-PF-5YP" secondAttribute="leading" id="ALS-is-Adn"/>
+                            <constraint firstAttribute="trailing" secondItem="Xde-GY-vw8" secondAttribute="trailing" id="eNj-FP-lPP"/>
+                            <constraint firstItem="Xde-GY-vw8" firstAttribute="bottom" secondItem="xsk-n3-ulH" secondAttribute="top" id="mBs-1N-ITe"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="barChartView" destination="Xde-GY-vw8" id="n5e-FA-Oz2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TDn-B4-XU1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3491" y="699"/>
         </scene>
         <!--Title-->
         <scene sceneID="drg-Ta-BTu">
@@ -381,7 +418,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="UmF-vJ-Al6" kind="relationship" relationship="viewControllers" id="vul-H2-4g1"/>
+                        <segue destination="tfE-qY-2kB" kind="relationship" relationship="viewControllers" id="vul-H2-4g1"/>
                         <segue destination="OBA-tf-Dhu" kind="relationship" relationship="viewControllers" id="nQY-YI-Jah"/>
                     </connections>
                 </tabBarController>
@@ -407,6 +444,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LNu-WA-KSR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2298" y="-101"/>
+        </scene>
+        <!--Host-->
+        <scene sceneID="8Op-d4-Wuz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tfE-qY-2kB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Host" id="mK3-lg-cSy"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="onO-vF-8ek">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="UmF-vJ-Al6" kind="relationship" relationship="rootViewController" id="6U6-cA-Qju"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AbB-bC-CHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2298" y="699"/>
         </scene>
     </scenes>
     <resources>

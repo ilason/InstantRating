@@ -46,11 +46,12 @@ class HostViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("hostGroupsCell", forIndexPath: indexPath)
+        cell.textLabel!.text = "Test Button"
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return 1
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
