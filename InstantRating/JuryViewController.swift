@@ -40,7 +40,6 @@ class JuryViewController: UIViewController, UITableViewDataSource {
         
     }
     
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -49,12 +48,11 @@ class JuryViewController: UIViewController, UITableViewDataSource {
    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("juryGroupCell", forIndexPath: indexPath)
-        cell.textLabel!.text = "Test Button"
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 0
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {

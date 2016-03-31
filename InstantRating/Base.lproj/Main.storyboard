@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Login Signup View Controller-->
+        <!--View Controller-->
         <scene sceneID="i7U-5m-ElW">
             <objects>
-                <viewController id="hz8-os-7c1" customClass="LoginSignupViewController" customModule="InstantRating" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hz8-os-7c1" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BHl-io-wPP"/>
                         <viewControllerLayoutGuide type="bottom" id="9yc-vl-HEb"/>
@@ -111,7 +111,7 @@
             </objects>
             <point key="canvasLocation" x="845" y="364"/>
         </scene>
-        <!--Host-->
+        <!--Item 2-->
         <scene sceneID="i8q-B8-k8z">
             <objects>
                 <viewController id="UmF-vJ-Al6" customClass="HostViewController" customModule="InstantRating" customModuleProvider="target" sceneMemberID="viewController">
@@ -157,21 +157,17 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="UmF-vJ-Al6" id="YgS-50-Ff1"/>
-                                    <outlet property="delegate" destination="UmF-vJ-Al6" id="UFX-GL-EBb"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Host" id="mK3-lg-cSy"/>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="mK3-lg-cSy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ws-7o-eRU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2298" y="699"/>
         </scene>
-        <!--Title-->
+        <!--Item 1-->
         <scene sceneID="drg-Ta-BTu">
             <objects>
                 <viewController id="Ba1-ba-dgv" customClass="JuryViewController" customModule="InstantRating" customModuleProvider="target" sceneMemberID="viewController">
@@ -183,12 +179,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K4z-1W-PDs">
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="6SG-Mk-7Fv">
+                                        <barButtonItem key="rightBarButtonItem" title="Join Group" id="re4-Z7-ZKv">
+                                            <connections>
+                                                <action selector="joinGroupButtonTapped:" destination="Ba1-ba-dgv" id="lW2-sb-aw3"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ymG-VU-HnY">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="juryGroupCell" textLabel="1T4-41-N3Q" style="IBUITableViewCellStyleDefault" id="9lx-yl-RUK">
-                                        <rect key="frame" x="0.0" y="92" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9lx-yl-RUK" id="E8W-JK-H5i">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
@@ -203,9 +211,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="sDL-vn-YXt" kind="show" id="pGh-a8-kBO"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -216,122 +221,28 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ymG-VU-HnY" firstAttribute="leading" secondItem="K4z-1W-PDs" secondAttribute="leading" id="8hk-HC-l0e"/>
                             <constraint firstAttribute="trailing" secondItem="ymG-VU-HnY" secondAttribute="trailing" id="BMO-AC-57m"/>
+                            <constraint firstItem="ymG-VU-HnY" firstAttribute="trailing" secondItem="K4z-1W-PDs" secondAttribute="trailing" id="CgP-xw-P3w"/>
                             <constraint firstItem="ymG-VU-HnY" firstAttribute="bottom" secondItem="w4O-Wx-OXH" secondAttribute="top" id="Fqg-G3-vSY"/>
                             <constraint firstItem="w4O-Wx-OXH" firstAttribute="top" secondItem="ymG-VU-HnY" secondAttribute="bottom" id="IfQ-P2-h3w"/>
-                            <constraint firstItem="ymG-VU-HnY" firstAttribute="top" secondItem="y0i-S5-jwQ" secondAttribute="bottom" constant="-64" id="WDG-X3-tC5"/>
+                            <constraint firstItem="ymG-VU-HnY" firstAttribute="top" secondItem="y0i-S5-jwQ" secondAttribute="bottom" constant="44" id="WDG-X3-tC5"/>
+                            <constraint firstItem="K4z-1W-PDs" firstAttribute="top" secondItem="y0i-S5-jwQ" secondAttribute="bottom" id="fdk-jw-pvA"/>
+                            <constraint firstItem="ymG-VU-HnY" firstAttribute="top" secondItem="K4z-1W-PDs" secondAttribute="bottom" id="kLE-ZP-cpc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ymG-VU-HnY" secondAttribute="trailing" constant="-20" id="pj9-ON-1Ah"/>
                             <constraint firstItem="ymG-VU-HnY" firstAttribute="leading" secondItem="hIr-JY-hLL" secondAttribute="leading" id="rpT-SL-jCt"/>
                             <constraint firstItem="ymG-VU-HnY" firstAttribute="leading" secondItem="hIr-JY-hLL" secondAttribute="leadingMargin" constant="-20" id="uoi-XX-tZu"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="6SG-Mk-7Fv">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="9rz-E4-Kew"/>
-                        <barButtonItem key="rightBarButtonItem" title="Join Group" id="re4-Z7-ZKv">
-                            <connections>
-                                <action selector="joinGroupButtonTapped:" destination="Ba1-ba-dgv" id="lW2-sb-aw3"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="wiG-rb-Ce1"/>
+                    <navigationItem key="navigationItem" id="Lct-So-2Lj"/>
                     <connections>
                         <outlet property="tableView" destination="ymG-VU-HnY" id="fku-gT-kYJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="snc-ER-jgW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2924" y="-101"/>
-        </scene>
-        <!--Current Question View Controller-->
-        <scene sceneID="yDh-UB-VJm">
-            <objects>
-                <viewController storyboardIdentifier="CurrentQuestion" id="sDL-vn-YXt" customClass="CurrentQuestionViewController" customModule="InstantRating" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="gFc-0t-OAw"/>
-                        <viewControllerLayoutGuide type="bottom" id="Jf9-ME-sZG"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Qdg-fP-QUW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Upe-0T-5ZP">
-                                <rect key="frame" x="5" y="109" width="84" height="84"/>
-                                <state key="normal" title="Button" image="StarRating">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" image="ChosenStar"/>
-                                <state key="highlighted" image="ChosenStar"/>
-                                <connections>
-                                    <action selector="starTapped:" destination="sDL-vn-YXt" eventType="touchUpInside" id="cIe-dR-TDJ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fn6-Ze-VzZ">
-                                <rect key="frame" x="88" y="109" width="84" height="84"/>
-                                <state key="normal" title="Button" image="StarRating">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" image="ChosenStar"/>
-                                <state key="highlighted" image="ChosenStar"/>
-                                <connections>
-                                    <action selector="starTapped:" destination="sDL-vn-YXt" eventType="touchUpInside" id="Tth-j5-Hde"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NyA-5A-Lff">
-                                <rect key="frame" x="173" y="109" width="84" height="84"/>
-                                <state key="normal" title="Button" image="StarRating">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" image="ChosenStar"/>
-                                <state key="highlighted" image="ChosenStar"/>
-                                <connections>
-                                    <action selector="starTapped:" destination="sDL-vn-YXt" eventType="touchUpInside" id="voO-mO-KH1"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qU9-Wu-mcE">
-                                <rect key="frame" x="251" y="109" width="84" height="84"/>
-                                <state key="normal" title="Button" image="StarRating">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" image="ChosenStar"/>
-                                <state key="highlighted" image="ChosenStar"/>
-                                <connections>
-                                    <action selector="starTapped:" destination="sDL-vn-YXt" eventType="touchUpInside" id="tca-bN-fo6"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPi-DH-VZL">
-                                <rect key="frame" x="326" y="109" width="84" height="84"/>
-                                <state key="normal" title="Button" image="StarRating">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" image="ChosenStar"/>
-                                <state key="highlighted" image="ChosenStar"/>
-                                <connections>
-                                    <action selector="starTapped:" destination="sDL-vn-YXt" eventType="touchUpInside" id="uM9-vl-dDj"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Enter Comment" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="90U-PE-kB5">
-                                <rect key="frame" x="20" y="201" width="374" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0sl-bj-wmh">
-                                <rect key="frame" x="110" y="378" width="193" height="67"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="starFive" destination="cPi-DH-VZL" id="xaK-8M-0Mo"/>
-                        <outlet property="starFour" destination="qU9-Wu-mcE" id="1k6-ij-ydc"/>
-                        <outlet property="starOne" destination="Upe-0T-5ZP" id="5TM-y4-VFU"/>
-                        <outlet property="starThree" destination="NyA-5A-Lff" id="Vd4-RG-7Dh"/>
-                        <outlet property="starTwo" destination="fn6-Ze-VzZ" id="JKO-dU-dhI"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6GF-BE-OaZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3491" y="-101"/>
+            <point key="canvasLocation" x="2298" y="-101"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="JsG-6A-PUg">
@@ -344,37 +255,16 @@
                     </tabBar>
                     <connections>
                         <segue destination="UmF-vJ-Al6" kind="relationship" relationship="viewControllers" id="vul-H2-4g1"/>
-                        <segue destination="OBA-tf-Dhu" kind="relationship" relationship="viewControllers" id="nQY-YI-Jah"/>
+                        <segue destination="Ba1-ba-dgv" kind="relationship" relationship="viewControllers" id="nQY-YI-Jah"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bbw-v1-2tj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1478" y="369"/>
         </scene>
-        <!--Judge-->
-        <scene sceneID="HiU-Uo-4sP">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OBA-tf-Dhu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Judge" id="wiG-rb-Ce1"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Q1k-dH-gII">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Ba1-ba-dgv" kind="relationship" relationship="rootViewController" id="vyA-vS-VCk"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LNu-WA-KSR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2298" y="-101"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="ChosenStar" width="691" height="596"/>
         <image name="GraphBackground" width="564" height="1001"/>
-        <image name="StarRating" width="693" height="598"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="h3u-SD-IaI"/>

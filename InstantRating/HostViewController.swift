@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HostViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class HostViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
