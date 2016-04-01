@@ -22,7 +22,7 @@ class DataResultsViewController: UIViewController, UITableViewDataSource, UITabl
         mybarChart.frame = CGRectMake(0, 0, self.view.frame.size.width, 400)
         mybarChart.noDataTextDescription = "Once your group responds to your question, you will have your results."
         months = ["1 Star", "2 Stars", "3 Stars", "4 Stars","5 Stars"]
-        let unitsSold = [5.0, 4.0, 6.0,3.0,12.0]
+        let unitsSold = [5.0, 4.0, 6.0,7.0,12.0]
         mybarChart.noDataText = "You need to provide data for the chart."
         var dataEntries: [BarChartDataEntry] = []
         
@@ -35,10 +35,10 @@ class DataResultsViewController: UIViewController, UITableViewDataSource, UITabl
         let chartData = BarChartData(xVals: months, dataSet: chartDataSet)
         mybarChart.data = chartData
         mybarChart.descriptionText = ""
-        chartDataSet.colors = ChartColorTemplates.joyful()
+        chartDataSet.colors = ChartColorTemplates.liberty()
         mybarChart.xAxis.labelPosition = .Bottom
         mybarChart.backgroundColor = UIColor(red: 189/255, green: 195/255, blue: 199/255, alpha: 1)
-        mybarChart.animate(xAxisDuration: 2.0, yAxisDuration: 2.0, easingOption: .EaseOutQuad)
+        mybarChart.animate(xAxisDuration: 2.0, yAxisDuration: 2.0, easingOption: .EaseInOutBounce)
         self.view.backgroundColor = UIColor(red: 189/255, green: 195/255, blue: 199/255, alpha: 1)
         
         return mybarChart
@@ -94,7 +94,7 @@ class DataResultsViewController: UIViewController, UITableViewDataSource, UITabl
             return 140
             }
         } else {
-            return 50
+            return 110
         }
     }
 

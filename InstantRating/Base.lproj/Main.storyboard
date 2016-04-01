@@ -230,6 +230,7 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="iIt-M0-c2B" secondAttribute="trailing" id="XNo-6x-H5w"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.49222153840284277" green="0.8562374169896384" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CommentCell" id="Nxy-Od-KJx" customClass="CommentTableViewCell" customModule="InstantRating" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="506" width="414" height="44"/>
@@ -238,15 +239,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R25-O2-RuJ">
-                                                    <rect key="frame" x="170" y="11" width="75" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R25-O2-RuJ">
+                                                    <rect key="frame" x="8" y="11" width="398" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="R25-O2-RuJ" firstAttribute="centerX" secondItem="gkN-Ma-5e4" secondAttribute="centerX" id="Yxi-nf-5I4"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="R25-O2-RuJ" secondAttribute="leading" id="3G9-lr-mYc"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="R25-O2-RuJ" secondAttribute="trailing" id="8o2-ZM-poQ"/>
                                                 <constraint firstItem="R25-O2-RuJ" firstAttribute="centerY" secondItem="gkN-Ma-5e4" secondAttribute="centerY" id="qUq-Yp-ElM"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -352,7 +354,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="6SG-Mk-7Fv">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="9rz-E4-Kew"/>
                         <barButtonItem key="rightBarButtonItem" title="Join Group" id="re4-Z7-ZKv">
                             <connections>
                                 <action selector="joinGroupButtonTapped:" destination="Ba1-ba-dgv" id="lW2-sb-aw3"/>
