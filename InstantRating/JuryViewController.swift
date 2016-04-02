@@ -49,7 +49,7 @@ class JuryViewController: UIViewController, UITableViewDataSource {
    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("juryGroupCell", forIndexPath: indexPath)
-        cell.textLabel!.text = "Test Button"
+        cell.textLabel!.text = "devIos5"
         return cell
     }
     

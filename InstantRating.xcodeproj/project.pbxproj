@@ -33,6 +33,7 @@
 		E585C3B41CADC6F5004A8BA8 /* BarChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E585C3B31CADC6F5004A8BA8 /* BarChartTableViewCell.swift */; };
 		E585C3B61CADCE94004A8BA8 /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E585C3B51CADCE94004A8BA8 /* QuestionTableViewCell.swift */; };
 		E585C3B81CADCFF8004A8BA8 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E585C3B71CADCFF8004A8BA8 /* CommentTableViewCell.swift */; };
+		E585C3BA1CAF3446004A8BA8 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E585C3B91CAF3446004A8BA8 /* Questions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,7 @@
 		E585C3B31CADC6F5004A8BA8 /* BarChartTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarChartTableViewCell.swift; sourceTree = "<group>"; };
 		E585C3B51CADCE94004A8BA8 /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
 		E585C3B71CADCFF8004A8BA8 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		E585C3B91CAF3446004A8BA8 /* Questions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,14 +173,14 @@
 			isa = PBXGroup;
 			children = (
 				E585C2E71CAC6A05004A8BA8 /* FirebaseController.swift */,
+				E585C2DF1CAC678C004A8BA8 /* LoginSignupViewController.swift */,
+				E585C2E11CAC6995004A8BA8 /* LoginSignupPickerViewController.swift */,
+				E585C3051CAC7228004A8BA8 /* HostViewController.swift */,
 				E585C3B01CAD9D01004A8BA8 /* DataResultsViewController.swift */,
 				E585C3B31CADC6F5004A8BA8 /* BarChartTableViewCell.swift */,
 				E585C3B51CADCE94004A8BA8 /* QuestionTableViewCell.swift */,
 				E585C3B71CADCFF8004A8BA8 /* CommentTableViewCell.swift */,
-				E585C2DF1CAC678C004A8BA8 /* LoginSignupViewController.swift */,
-				E585C2E11CAC6995004A8BA8 /* LoginSignupPickerViewController.swift */,
 				E585C2E91CAC6A69004A8BA8 /* JuryViewController.swift */,
-				E585C3051CAC7228004A8BA8 /* HostViewController.swift */,
 				E585C2E51CAC69E9004A8BA8 /* CurrentQuestionViewController.swift */,
 			);
 			name = Controllers;
@@ -190,6 +192,7 @@
 				E585C2EC1CAC6B26004A8BA8 /* User.swift */,
 				E585C2EE1CAC6B5E004A8BA8 /* Groups.swift */,
 				E585C2F01CAC6B67004A8BA8 /* Rating.swift */,
+				E585C3B91CAF3446004A8BA8 /* Questions.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				E585C3061CAC7228004A8BA8 /* HostViewController.swift in Sources */,
 				E585C3B61CADCE94004A8BA8 /* QuestionTableViewCell.swift in Sources */,
 				E585C2E21CAC6995004A8BA8 /* LoginSignupPickerViewController.swift in Sources */,
+				E585C3BA1CAF3446004A8BA8 /* Questions.swift in Sources */,
 				E585C2E81CAC6A05004A8BA8 /* FirebaseController.swift in Sources */,
 				E585C2F11CAC6B67004A8BA8 /* Rating.swift in Sources */,
 				E585C2E01CAC678C004A8BA8 /* LoginSignupViewController.swift in Sources */,

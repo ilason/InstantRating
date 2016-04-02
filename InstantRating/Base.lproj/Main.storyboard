@@ -111,7 +111,7 @@
             </objects>
             <point key="canvasLocation" x="845" y="364"/>
         </scene>
-        <!--Host View Controller-->
+        <!--Host-->
         <scene sceneID="i8q-B8-k8z">
             <objects>
                 <viewController id="UmF-vJ-Al6" customClass="HostViewController" customModule="InstantRating" customModuleProvider="target" sceneMemberID="viewController">
@@ -159,7 +159,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="oZZ-UG-Tbt">
+                    <navigationItem key="navigationItem" title="Host" id="oZZ-UG-Tbt">
                         <barButtonItem key="rightBarButtonItem" title="Create Group" id="mRF-J4-U1P">
                             <connections>
                                 <action selector="createGroupButtonTapped:" destination="UmF-vJ-Al6" id="QEU-xt-0Wa"/>
@@ -271,7 +271,11 @@
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="THH-SF-iQx">
-                        <barButtonItem key="rightBarButtonItem" title="Ask Question" id="1RN-Xp-b1L"/>
+                        <barButtonItem key="rightBarButtonItem" title="Ask Question" id="1RN-Xp-b1L">
+                            <connections>
+                                <segue destination="Slv-cF-SdA" kind="show" id="cc0-yq-Zkj"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
@@ -291,7 +295,20 @@
                     <view key="view" contentMode="scaleToFill" id="sf1-k9-qcs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ask Question Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6FO-tY-OHl">
+                                <rect key="frame" x="20" y="207" width="374" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3a-Lc-tDB">
+                                <rect key="frame" x="144" y="260" width="126" height="62"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.43529411764705883" green="0.82352941176470584" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
@@ -299,7 +316,7 @@
             </objects>
             <point key="canvasLocation" x="3994" y="699"/>
         </scene>
-        <!--Title-->
+        <!--Judge-->
         <scene sceneID="drg-Ta-BTu">
             <objects>
                 <viewController id="Ba1-ba-dgv" customClass="JuryViewController" customModule="InstantRating" customModuleProvider="target" sceneMemberID="viewController">
@@ -353,7 +370,7 @@
                             <constraint firstItem="ymG-VU-HnY" firstAttribute="leading" secondItem="hIr-JY-hLL" secondAttribute="leadingMargin" constant="-20" id="uoi-XX-tZu"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="6SG-Mk-7Fv">
+                    <navigationItem key="navigationItem" title="Judge" id="6SG-Mk-7Fv">
                         <barButtonItem key="rightBarButtonItem" title="Join Group" id="re4-Z7-ZKv">
                             <connections>
                                 <action selector="joinGroupButtonTapped:" destination="Ba1-ba-dgv" id="lW2-sb-aw3"/>
