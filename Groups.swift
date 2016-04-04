@@ -20,11 +20,22 @@ class Groups {
     var questionID: String
     var hostUserID: String
     var identifier: String?
-    var endpoint: String
+    var endpoint: String {
+        return "groups"
+    }
     
     var jsonValue: [String: AnyObject] {
-        return [kGroupName: groupName, kQuestionID: questionID, khostUserID : hostUserID, kUserIDs: userIDs]
-
+        var json: [String: AnyObject] = [kGroupName: groupName, kQuestionID: questionID, khostUserID : hostUserID]
+        
+        
+        json.updateValue(userIDs, forKey: kUserIDs)
+//        for userId in userIDs {
+//            let userDictionary: [String: AnyObject] = [userId: false]
+//            
+//            json.updateValue(userDictionary, forKey: kUserIDs)
+//        }
+        
+        return json
     }
     
     init?(json: [String: AnyObject], identifier: String) {

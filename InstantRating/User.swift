@@ -10,7 +10,6 @@ import Foundation
 
 class User {
     private let kUsername = "username"
-    private let kUserID = "userID"
     
     var username = ""
     var identifier: String?
@@ -18,14 +17,10 @@ class User {
         return "users"
     }
     var jsonValue: [String: AnyObject] {
-        var json: [String: AnyObject] = [kUsername: username]
-        
-        if let identifier = identifier {
-            json.updateValue(kUsername, forKey: identifier)
-        }
-        return json
+        return [kUsername: username]
     }
-    init? (json: [String: AnyObject], identifier: String) {
+    
+    init?(json: [String: AnyObject], identifier: String) {
         
         guard let username = json[kUsername] as? String else {return nil}
         

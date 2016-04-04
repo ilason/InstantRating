@@ -47,6 +47,8 @@ class DataResultsViewController: UIViewController, UITableViewDataSource, UITabl
         
         
     }
+    
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 2
     }

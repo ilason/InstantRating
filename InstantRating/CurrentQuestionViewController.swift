@@ -9,6 +9,10 @@
 import UIKit
 
 class CurrentQuestionViewController: UIViewController {
+    
+    static let sharedInstance = CurrentQuestionViewController()
+    
+    @IBOutlet weak var currentQuestionLabel: UILabel!
 
     @IBOutlet weak var starOne: UIButton!
     
@@ -24,6 +28,8 @@ class CurrentQuestionViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    
     @IBAction func starTapped(sender: AnyObject) {
         switch sender.tag {
         case 1 :

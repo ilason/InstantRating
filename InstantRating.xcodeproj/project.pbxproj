@@ -34,6 +34,10 @@
 		E585C3B61CADCE94004A8BA8 /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E585C3B51CADCE94004A8BA8 /* QuestionTableViewCell.swift */; };
 		E585C3B81CADCFF8004A8BA8 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E585C3B71CADCFF8004A8BA8 /* CommentTableViewCell.swift */; };
 		E585C3BA1CAF3446004A8BA8 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E585C3B91CAF3446004A8BA8 /* Questions.swift */; };
+		E585C3BF1CB2C9EC004A8BA8 /* AskQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E585C3BE1CB2C9EC004A8BA8 /* AskQuestionViewController.swift */; };
+		E585C3C31CB2CD85004A8BA8 /* AskQuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E585C3C21CB2CD85004A8BA8 /* AskQuestionController.swift */; };
+		E585C3C91CB31055004A8BA8 /* GroupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E585C3C81CB31055004A8BA8 /* GroupController.swift */; };
+		E585C3CB1CB311E0004A8BA8 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E585C3CA1CB311E0004A8BA8 /* UserController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +121,10 @@
 		E585C3B51CADCE94004A8BA8 /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
 		E585C3B71CADCFF8004A8BA8 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		E585C3B91CAF3446004A8BA8 /* Questions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
+		E585C3BE1CB2C9EC004A8BA8 /* AskQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AskQuestionViewController.swift; sourceTree = "<group>"; };
+		E585C3C21CB2CD85004A8BA8 /* AskQuestionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AskQuestionController.swift; sourceTree = "<group>"; };
+		E585C3C81CB31055004A8BA8 /* GroupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupController.swift; sourceTree = "<group>"; };
+		E585C3CA1CB311E0004A8BA8 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,7 +171,9 @@
 				E585C2D61CAC664F004A8BA8 /* LaunchScreen.storyboard */,
 				E585C2D11CAC664F004A8BA8 /* Main.storyboard */,
 				E585C2EB1CAC6B13004A8BA8 /* Controllers */,
+				E585C3C01CB2CAEC004A8BA8 /* ViewControllers */,
 				E585C2F21CAC6B6E004A8BA8 /* Models */,
+				E585C3C11CB2CB42004A8BA8 /* CustomTableViewCells */,
 				E585C2D91CAC664F004A8BA8 /* Info.plist */,
 			);
 			path = InstantRating;
@@ -173,15 +183,11 @@
 			isa = PBXGroup;
 			children = (
 				E585C2E71CAC6A05004A8BA8 /* FirebaseController.swift */,
+				E585C3C81CB31055004A8BA8 /* GroupController.swift */,
+				E585C3CA1CB311E0004A8BA8 /* UserController.swift */,
 				E585C2DF1CAC678C004A8BA8 /* LoginSignupViewController.swift */,
 				E585C2E11CAC6995004A8BA8 /* LoginSignupPickerViewController.swift */,
-				E585C3051CAC7228004A8BA8 /* HostViewController.swift */,
-				E585C3B01CAD9D01004A8BA8 /* DataResultsViewController.swift */,
-				E585C3B31CADC6F5004A8BA8 /* BarChartTableViewCell.swift */,
-				E585C3B51CADCE94004A8BA8 /* QuestionTableViewCell.swift */,
-				E585C3B71CADCFF8004A8BA8 /* CommentTableViewCell.swift */,
-				E585C2E91CAC6A69004A8BA8 /* JuryViewController.swift */,
-				E585C2E51CAC69E9004A8BA8 /* CurrentQuestionViewController.swift */,
+				E585C3C21CB2CD85004A8BA8 /* AskQuestionController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -219,6 +225,28 @@
 				E585C3AB1CAD9ACA004A8BA8 /* ChartsTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		E585C3C01CB2CAEC004A8BA8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E585C2E91CAC6A69004A8BA8 /* JuryViewController.swift */,
+				E585C3051CAC7228004A8BA8 /* HostViewController.swift */,
+				E585C3B01CAD9D01004A8BA8 /* DataResultsViewController.swift */,
+				E585C3BE1CB2C9EC004A8BA8 /* AskQuestionViewController.swift */,
+				E585C2E51CAC69E9004A8BA8 /* CurrentQuestionViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E585C3C11CB2CB42004A8BA8 /* CustomTableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				E585C3B31CADC6F5004A8BA8 /* BarChartTableViewCell.swift */,
+				E585C3B51CADCE94004A8BA8 /* QuestionTableViewCell.swift */,
+				E585C3B71CADCFF8004A8BA8 /* CommentTableViewCell.swift */,
+			);
+			name = CustomTableViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,6 +359,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E585C3CB1CB311E0004A8BA8 /* UserController.swift in Sources */,
+				E585C3BF1CB2C9EC004A8BA8 /* AskQuestionViewController.swift in Sources */,
 				E585C3061CAC7228004A8BA8 /* HostViewController.swift in Sources */,
 				E585C3B61CADCE94004A8BA8 /* QuestionTableViewCell.swift in Sources */,
 				E585C2E21CAC6995004A8BA8 /* LoginSignupPickerViewController.swift in Sources */,
@@ -339,7 +369,9 @@
 				E585C2F11CAC6B67004A8BA8 /* Rating.swift in Sources */,
 				E585C2E01CAC678C004A8BA8 /* LoginSignupViewController.swift in Sources */,
 				E585C3B11CAD9D01004A8BA8 /* DataResultsViewController.swift in Sources */,
+				E585C3C31CB2CD85004A8BA8 /* AskQuestionController.swift in Sources */,
 				E585C2ED1CAC6B26004A8BA8 /* User.swift in Sources */,
+				E585C3C91CB31055004A8BA8 /* GroupController.swift in Sources */,
 				E585C2E61CAC69E9004A8BA8 /* CurrentQuestionViewController.swift in Sources */,
 				E585C3B41CADC6F5004A8BA8 /* BarChartTableViewCell.swift in Sources */,
 				E585C2EA1CAC6A69004A8BA8 /* JuryViewController.swift in Sources */,

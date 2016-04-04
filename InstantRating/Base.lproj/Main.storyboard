@@ -284,10 +284,10 @@
             </objects>
             <point key="canvasLocation" x="3491" y="699"/>
         </scene>
-        <!--View Controller-->
+        <!--Ask Question View Controller-->
         <scene sceneID="ETO-47-G5L">
             <objects>
-                <viewController id="Slv-cF-SdA" sceneMemberID="viewController">
+                <viewController id="Slv-cF-SdA" customClass="AskQuestionViewController" customModule="InstantRating" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CaT-0R-p16"/>
                         <viewControllerLayoutGuide type="bottom" id="iE4-7q-4fI"/>
@@ -306,11 +306,17 @@
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="sendToUsersButtonTapped:" destination="Slv-cF-SdA" eventType="touchUpInside" id="Ctj-tx-Lyh"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.43529411764705883" green="0.82352941176470584" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="askQuestionTextField" destination="6FO-tY-OHl" id="u6p-n2-aBl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="emH-sm-UVE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -504,6 +510,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="currentQuestionLabel" destination="HJZ-iD-gno" id="7Zm-Fs-SeC"/>
                         <outlet property="starFive" destination="cPi-DH-VZL" id="xaK-8M-0Mo"/>
                         <outlet property="starFour" destination="qU9-Wu-mcE" id="1k6-ij-ydc"/>
                         <outlet property="starOne" destination="Upe-0T-5ZP" id="5TM-y4-VFU"/>
