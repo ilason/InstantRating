@@ -11,6 +11,7 @@ import Firebase
 
 
 class HostViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
     @IBOutlet weak var hostTableView: UITableView!
     
     let base = Firebase(url: "https://instant-rating.firebaseio.com/")
@@ -34,6 +35,7 @@ class HostViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
 
         // Do any additional setup after loading the view.
+        navigationController?.navigationBar.barTintColor = UIColor(
     }
     
     

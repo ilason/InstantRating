@@ -46,7 +46,7 @@ class GroupController {
     
     
     // TODO: - Make a method that fetches a group with an identifier
-    func fetchGroupForJudge(groupName: String, completion:([Groups] -> Void)) {
+    func fetchGroupForName(groupName: String, completion:([Groups] -> Void)) {
         let groupRef = FirebaseController.base.childByAppendingPath("groups")
         groupRef.queryOrderedByChild("groupName").queryEqualToValue(groupName).observeEventType(.Value, withBlock: { (snapshot) in
             guard let data = snapshot.value as? [String: AnyObject] else {return}

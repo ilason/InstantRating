@@ -15,7 +15,7 @@ class JuryViewController: UIViewController, UITableViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        GroupController.sharedInstance.fetchGroupForJudge() { (groups) in
+        GroupController.sharedInstance.fetchGroupForJudge("suh") { (groups) in
             self.myGroups = groups
             dispatch_async(dispatch_get_main_queue(), {
                 self.tableView.reloadData()
@@ -31,9 +31,10 @@ class JuryViewController: UIViewController, UITableViewDataSource {
         let ok = UIAlertAction(title: "Join", style: .Default, handler: { (action) -> Void in
             
             //User can add themself to a group
-            let addNewGroup = Groups(groupName: loginTextField!.text!, questionID: "12", hostUserID: "2131", userIDs: ["Aaron","James","Sepncer"])
-            FirebaseController.base.childByAppendingPath("groups").childByAutoId().setValue(addNewGroup.jsonValue)
-            print("Ok Button Pressed")
+            let groupID = loginTextField.text ?? ""
+            GroupController.sharedInstance.fetchGroupForJudge(groupID, completion: { (groups) in
+                <#code#>
+            })
             
             
         })
