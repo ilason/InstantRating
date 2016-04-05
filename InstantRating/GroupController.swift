@@ -14,15 +14,16 @@ class GroupController {
     
     var myGroups = [Groups]()
     
-    // TODO: - Create method that pulls a users hosted groups
     
     // TODO: - Make a method that creates a group in firebase
     
     // TODO: - Make a method that pulls groups that a user is a part of
     
     
+    
+    
+    // TODO: - Create method that pulls a users hosted groups
     // Convert into Group objects using Group(init)
-            
     // completion: array of group objects
      func fetchGroupsCreatedByUser(hostUserID: String, completion:([Groups] -> Void)) {
         let groupRef = FirebaseController.base.childByAppendingPath("groups")
@@ -43,12 +44,25 @@ class GroupController {
         })
     }
     
-//    func fetchGroupForJudge(groupName: String, completion:([Groups] -> Void)) {
-//        let groupRef = FirebaseController.base.childByAppendingPath("groups")
-//        groupRef.queryOrderedByChild(")
-//    }
     
     // TODO: - Make a method that fetches a group with an identifier
+    func fetchGroupForJudge(groupName: String, completion:([Groups] -> Void)) {
+        let groupRef = FirebaseController.base.childByAppendingPath("groups")
+        groupRef.queryOrderedByChild("groupName").queryEqualToValue(groupName).observeEventType(.Value, withBlock: { (snapshot) in
+            guard let data = snapshot.value as? [String: AnyObject] else {return}
+            self.myGroups = []
+            for(key, value) in data {
+                if let json = value as? [String: AnyObject] {
+                    if let group = Groups(json: json, identifier: key) {
+                        self.myGroups.append(group)
+                    }
+                }
+            }
+            self.myGroups.sortInPlace({$0.identifier > $1.identifier})
+            completion(self.myGroups)
+        })
+    }
+    
     
     // TODO: - Make a method that adds a user to a group
     

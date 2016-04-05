@@ -11,11 +11,16 @@ import UIKit
 class JuryViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    
+    var myGroups: [Groups]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        GroupController.sharedInstance.fetchGroupForJudge() { (groups) in
+            self.myGroups = groups
+            dispatch_async(dispatch_get_main_queue(), {
+                self.tableView.reloadData()
+            })
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -24,7 +29,13 @@ class JuryViewController: UIViewController, UITableViewDataSource {
         var loginTextField: UITextField?
         let alertController = UIAlertController(title: "Join Group", message: "Please Enter Group ID Accurately.", preferredStyle: .Alert)
         let ok = UIAlertAction(title: "Join", style: .Default, handler: { (action) -> Void in
+            
+            //User can add themself to a group
+            let addNewGroup = Groups(groupName: loginTextField!.text!, questionID: "12", hostUserID: "2131", userIDs: ["Aaron","James","Sepncer"])
+            FirebaseController.base.childByAppendingPath("groups").childByAutoId().setValue(addNewGroup.jsonValue)
             print("Ok Button Pressed")
+            
+            
         })
         let cancel = UIAlertAction(title: "Cancel", style: .Cancel) { (action) -> Void in
             print("Cancel Button Pressed")
@@ -49,12 +60,15 @@ class JuryViewController: UIViewController, UITableViewDataSource {
    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("juryGroupCell", forIndexPath: indexPath)
-        cell.textLabel!.text = "devIos5"
+        if let myGroups = self.myGroups {
+            let group = myGroups[indexPath.row]
+            cell.textLabel!.text = group.groupName
+        }
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return myGroups?.count ?? 0
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
