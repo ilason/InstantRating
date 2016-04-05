@@ -11,6 +11,7 @@ import Firebase
 
 
 class HostViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    @IBOutlet weak var hostTableView: UITableView!
     
     let base = Firebase(url: "https://instant-rating.firebaseio.com/")
     static let sharedInstance = HostViewController()
@@ -19,13 +20,18 @@ class HostViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        GroupController.sharedInstance.fetchGroupsCreatedByUser("2131") { (groups) in
+            self.myGroups = groups
+            dispatch_async(dispatch_get_main_queue(), { 
+                self.hostTableView.reloadData()
+            })
+           
+        }
         
         
-        GroupController.fetchUserGroupsCreated("2131") { (groups) in
-    
             // SET myGroups = groups
             // Reload your data
-        }
+        
 
         // Do any additional setup after loading the view.
     }
@@ -64,17 +70,35 @@ class HostViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("hostGroupsCell", forIndexPath: indexPath)
-        cell.textLabel!.text = "devIos5"
+        if let myGroups = self.myGroups {
+            let group = myGroups[indexPath.row]
+            cell.textLabel!.text = group.groupName
+            
+        }
+      
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return myGroups?.count ?? 0
+    }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            let groups = myGroups![indexPath.row]
+//            GroupController.sharedInstance.deleteGroupFromFirebase()
+                FirebaseController.base.childByAppendingPath("groups").childByAppendingPath(groups.identifier!).removeValue()
+            
+        }
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
+    
     
 
 }

@@ -40,7 +40,7 @@ class Groups {
     
     init?(json: [String: AnyObject], identifier: String) {
         guard let groupNameID = json[kGroupName] as? String,
-                let userIDs = json[kUserIDs] as? String,
+                let userIDs = json[kUserIDs] as? [String],
                 let questionID = json[kQuestionID] as? String,
                 let hostUserID = json[khostUserID] as? String else {return nil}
 
@@ -48,7 +48,8 @@ class Groups {
         self.groupName = groupNameID
         self.questionID = questionID
         self.hostUserID = hostUserID
-        self.userIDs = [userIDs]
+        self.userIDs = userIDs
+        self.identifier = identifier
     }
     
     
