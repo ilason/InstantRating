@@ -13,9 +13,19 @@ import Firebase
 class HostViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     let base = Firebase(url: "https://instant-rating.firebaseio.com/")
+    static let sharedInstance = HostViewController()
+    
+    var myGroups: [Groups]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        GroupController.fetchUserGroupsCreated("2131") { (groups) in
+    
+            // SET myGroups = groups
+            // Reload your data
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -26,6 +36,7 @@ class HostViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let alertController = UIAlertController(title: "Create Group", message: "Please Enter Group ID.", preferredStyle: .Alert)
         let ok = UIAlertAction(title: "Create", style: .Default, handler: { (action) -> Void in
             print("Create Button Pressed")
+            
             let newGroup = Groups(groupName: loginTextField!.text!, questionID: "12", hostUserID: "2131", userIDs: ["Aaron","James","Sepncer"])
             FirebaseController.base.childByAppendingPath("groups").childByAutoId().setValue(newGroup.jsonValue)
         })
@@ -67,3 +78,16 @@ class HostViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
